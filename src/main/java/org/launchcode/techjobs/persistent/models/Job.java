@@ -2,7 +2,7 @@ package org.launchcode.techjobs.persistent.models;
 
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.ManyToAny;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,9 @@ public class Job extends AbstractEntity{
     private Employer employer;
 
     @ManyToMany
+    @JoinColumn(name = "skills_id")
     private List<Skill> skills = new ArrayList<>();
+
 
 
     public Job() {
